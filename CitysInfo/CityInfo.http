@@ -1,0 +1,55 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+@schema=https
+@hostname=localhost
+@port=7180 
+
+GET {{schema}}://{{hostname}}:{{port}}/api/v1/cities
+
+###
+GET {{schema}}://{{hostname}}:{{port}}/api/v1/cities
+Accept:Application/json
+
+###
+POST {{schema}}://{{hostname}}:{{port}}/api/v2/cities/1/pointsofinterest
+Accept: Application/json
+Content-Type: Application/json
+
+{
+  "name":"a name for testing 2",
+  "description":"a desc for testing 2"
+}
+
+###
+# @name createapi
+POST {{schema}}://{{hostname}}:{{port}}/api/v2/cities/1/pointsofinterest
+Accept: Application/json
+Content-Type: Application/json
+
+{
+  "name":"a name for testing 2",
+  "description":"a desc for testing 2"
+}
+
+###
+
+@poiid = {{createapi.response.body.id}}
+
+POST {{schema}}://{{hostname}}:{{port}}/api/v2/cities/1/pointsofinterest/{{poiid}}
+Accept:application/json
+
+###
+
+// get a token  
+POST https://localhost:7180/api/Authentication/Authenticate
+Content-Type: application/json
+
+{
+  "userName": "Ali Ansari3",
+  "password": "ahwazi..."
+}
+
+###
+
+// authenticate GET request
+GET {{schema}}://{{hostname}}:{{port}}/api/v1/cities
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxIiwiZ2l2ZW5fbmFtZSI6IkFsaSIsImZhbWlseV9uYW1lIjoiQW5zYXJpIiwiY2l0eSI6IkFod2F6IiwibmJmIjoxNzQ2MTQxNjc2LCJleHAiOjE3NDYxNDUyNzYsImlzcyI6Imh0dHBzOi8vbG9jYWxob3N0OjcxODAiLCJhdWQiOiJjaXR5aW5mb2FwaSJ9._OcLZbjQOH7KqbqrJ2WdD22dVDXKQ-qzAW0eHaqNmWg 

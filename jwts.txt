@@ -1,0 +1,11 @@
+dotnet user-jwts create --help
+
+dotnet user-jwts create --issuer https://localhost:7180 --audience cityinfoapi
+
+dotnet user-jwts key --issuer https://localhost:7180
+
+dotnet user-jwts create --issuer https://localhost:7180 --audience cityinfoapi --claim "city=Ahwaz"
+
+
+برای نقش ها :
+dotnet user-jwts create --issuer https://localhost:7180 --audience cityinfoapi --claim name=Ali --role Admin

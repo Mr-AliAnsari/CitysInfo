@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CitysInfo</name>
+    </assembly>
+    <members>
+        <member name="M:CitysInfo.Controllers.CitiesController.GetCityId(System.Int32,System.Boolean)">
+            <summary>
+            This method returns a specific city based on its ID
+            </summary>
+            <param name="cityId">the id of the city to get</param>
+            <param name="includePointsOfInterest">Will the points of interest be returned ?</param>
+            <returns>َa city with or without point of interest</returns>
+            <response code= "200">Return the requested city</response>
+        </member>
+        <member name="T:CitysInfo.Migrations.CityInfoDBInitialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:CitysInfo.Migrations.CityInfoDBInitialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CitysInfo.Migrations.CityInfoDBInitialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CitysInfo.Migrations.CityInfoDBInitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CitysInfo.Migrations.InitialDataSeed">
+            <inheritdoc />
+        </member>
+        <member name="M:CitysInfo.Migrations.InitialDataSeed.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CitysInfo.Migrations.InitialDataSeed.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:CitysInfo.Migrations.InitialDataSeed.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:CitysInfo.Models.CityWithoutPointOfInterestDto">
+            <summary>
+            شهر بدون نقاط دیدنی
+            </summary>
+        </member>
+        <member name="P:CitysInfo.Models.CityWithoutPointOfInterestDto.Id">
+            <summary>
+            آیدی شهر
+            </summary>
+        </member>
+        <member name="P:CitysInfo.Models.CityWithoutPointOfInterestDto.Name">
+            <summary>
+            اسم شهر
+            </summary>
+        </member>
+        <member name="P:CitysInfo.Models.CityWithoutPointOfInterestDto.Description">
+            <summary>
+            توضیحات شهر
+            </summary>
+        </member>
+        <member name="T:CitysInfo.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:CitysInfo.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:CitysInfo.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="M:CitysInfo.Repositories.CityInfoRepository.GetCitiesAsync">
+            <summary>
+            City
+            </summary>
+        </member>
+        <member name="M:CitysInfo.Repositories.CityInfoRepository.GetByIdForPointOfInterestAsync(System.Int32,System.Int32)">
+            <summary>
+            PointsOfInterest
+            </summary>
+        </member>
+    </members>
+</doc>
