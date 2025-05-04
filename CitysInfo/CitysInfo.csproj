@@ -13,6 +13,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <Content Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="appsettings.Production.json" />
   </ItemGroup>
 
@@ -47,7 +54,6 @@
   <ItemGroup>
     <Folder Include="logs\" />
     <Folder Include="Infrastructure\Utilities\" />
-    <Folder Include="NewFolder\" />
   </ItemGroup>
 
   <ItemGroup>

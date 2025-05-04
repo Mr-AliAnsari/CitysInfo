@@ -74,6 +74,7 @@ namespace CitysInfo.Controllers
                 new Claim("given_name",user.FirstName),
                 new Claim("family_name",user.LastName),
                 new Claim("city",user.City),
+                //clone
             };
 
             //تولید توکن
