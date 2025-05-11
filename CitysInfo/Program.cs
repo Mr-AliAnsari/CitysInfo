@@ -244,7 +244,7 @@ if (app.Environment.IsDevelopment())
                 desc.GroupName.ToUpperInvariant());
         }
     });
-    app.MapOpenApi();
+    //app.MapOpenApi();
 }
 
 app.UseHttpsRedirection();
