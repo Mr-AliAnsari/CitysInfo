@@ -7,7 +7,7 @@ namespace CitysInfo.DbContexts
     {
         public CityInfoDbContext(DbContextOptions<CityInfoDbContext> options) : base(options)
         {
-
+            
         }
         public DbSet<City> Cities { get; set; } = null!;
         public DbSet<PointsOfInterest> PointsOfInterest { get; set; } = null!;
