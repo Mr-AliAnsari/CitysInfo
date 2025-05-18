@@ -187,18 +187,20 @@ builder.Services.AddSwaggerGen(setupAction =>
     setupAction.IncludeXmlComments(xmlCommentsPath);
 
     // تعریف امنیتی
-    setupAction.AddSecurityDefinition("CityInfoApiBearerAuth", new()
+    setupAction.AddSecurityDefinition("CityInfoApiBearerAuth", new OpenApiSecurityScheme
     {
         Type = SecuritySchemeType.Http, // نوع احراز هویت (HTTP-based)
         Scheme = "Bearer", // استفاده از توکن Bearer
-        Description = "Input a valid token to access this API"
+        Description = "Input a valid token to access this API",
+        In = ParameterLocation.Header,
+        BearerFormat = "JWT"
     });
 
     // اعمال امنیتی
-    setupAction.AddSecurityRequirement(new()
+    setupAction.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
         {
-            new()
+            new OpenApiSecurityScheme
             {
                 Reference = new OpenApiReference //به تعریف امنیتی ایجاد شده در AddSecurityDefinition ارجاع می‌دهد.
                 {
@@ -207,6 +209,10 @@ builder.Services.AddSwaggerGen(setupAction =>
                 }
             },
             new List<string>()
+            // or
+            // Array.Empty<string>()
+            // or
+            // []
         }
     });
 
