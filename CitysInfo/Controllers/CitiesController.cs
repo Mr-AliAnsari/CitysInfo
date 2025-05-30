@@ -1,9 +1,11 @@
 ﻿using Asp.Versioning;
 using AutoMapper;
+using CitysInfo.Domain_Models.User;
 using CitysInfo.Entities;
 using CitysInfo.Models;
 using CitysInfo.Repositories;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
@@ -21,7 +23,10 @@ namespace CitysInfo.Controllers
         private readonly IMapper _mapper;
         const int maxCitiesPageSize = 10;
 
-        public CitiesController(ICityInfoRepository cityInfoRepository, IMapper mapper)
+        public CitiesController(
+            ICityInfoRepository cityInfoRepository,
+            IMapper mapper
+            )
         {
             _cityInfoRepository = cityInfoRepository ?? throw new ArgumentNullException(nameof(cityInfoRepository));
             _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
@@ -31,6 +36,7 @@ namespace CitysInfo.Controllers
         public async Task<ActionResult<IEnumerable<CityWithoutPointOfInterestDto>>> GetCities
             (string? name, string? searchQuery, int pageNumber = 1, int pageSize = 10)
         {
+
             if (pageSize > maxCitiesPageSize)
             {
                 pageSize = maxCitiesPageSize;
